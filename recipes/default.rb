@@ -1,7 +1,5 @@
-cookbook_file ".env" do
-  path "/tmp/.env"
-end
-
-dotenv "/tmp" do
-  action :load
-end
+# use the dotenv LWRP, e.g. to load ENV variables from /var/www/app/current/.env
+#
+# dotenv "app" do
+#   action :load
+# end
