@@ -1,8 +1,7 @@
-# install dotenv gem for the Ruby running Chef
-chef_gem "dotenv" do
-  action :install
+cookbook_file ".env" do
+  path "/tmp/.env"
 end
 
-# load ENV variables from .env
-require 'dotenv'
-Dotenv.load
+dotenv "/tmp" do
+  action :load
+end
