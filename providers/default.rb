@@ -14,7 +14,6 @@ action :load do
   end
 
   # load ENV variables from .env
-  # raise an error if .env doesn't exist
   require 'dotenv'
-  ::Dotenv.load! "#{new_resource.name}/.env"
+  ::Dotenv.load "#{new_resource.name}/.env"
 end
