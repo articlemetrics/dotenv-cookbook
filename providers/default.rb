@@ -16,6 +16,7 @@ action :load do
   # load ENV variables from file specified by dotenv atrribute
   # use .env when dotenv is "default"
   require 'dotenv'
+  ENV["DOTENV"] = new_resource.dotenv
   filename = new_resource.dotenv == "default" ? ".env" : ".env.#{new_resource.dotenv}"
   ::Dotenv.load! "/var/www/#{new_resource.name}/current/#{filename}"
 end
