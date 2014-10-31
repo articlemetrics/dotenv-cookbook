@@ -13,10 +13,10 @@ action :load do
     action :install
   end
 
-  # load ENV variables from file specified by app_env atrribute
-  # use .env when app_env is "default"
+  # load ENV variables from file specified by dotenv atrribute
+  # use .env when dotenv is "default"
   require 'dotenv'
-  filename = new_resource.app_env == "default" ? ".env" : ".env.#{new_resource.app_env}"
+  filename = new_resource.dotenv == "default" ? ".env" : ".env.#{new_resource.dotenv}"
   ::Dotenv.load! "/var/www/#{new_resource.name}/current/#{filename}"
 end
 
