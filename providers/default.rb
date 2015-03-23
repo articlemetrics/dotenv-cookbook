@@ -10,6 +10,7 @@ end
 
 action :load do
   chef_gem "dotenv" do
+    compile_time false if respond_to?(:compile_time)
     action :install
   end
 
