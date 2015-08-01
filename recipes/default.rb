@@ -2,5 +2,5 @@
 #
 # dotenv "app" do
 #   dotenv "default"
-#   action :load
-# end
+#   action :nothing
+# end.run_action(:load)
