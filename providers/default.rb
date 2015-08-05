@@ -20,5 +20,5 @@ action :load do
   ENV["DOTENV"] = new_resource.dotenv
   filename = new_resource.dotenv == "default" ? ".env" : ".env.#{new_resource.dotenv}"
   filepath = "/var/www/#{new_resource.name}/shared/#{filename}"
-  ::Dotenv.load! filepath if File.exist?(filepath)
+  ::Dotenv.load! filepath if ::File.exist?(filepath)
 end
