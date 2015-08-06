@@ -33,7 +33,7 @@ action :load do
 
   # create .env file from template if we don't find it
   template filepath do
-    source ".env.erb"
+    source "env.erb"
     owner new_resource.user
     group new_resource.group
     mode '0755'
