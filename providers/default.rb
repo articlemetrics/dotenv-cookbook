@@ -28,7 +28,8 @@ action :load do
       group new_resource.group
       mode '0755'
       recursive true
-    end
+      action :nothing
+    end.run_action(:create)
   end
 
   # create .env file from template if we don't find it
