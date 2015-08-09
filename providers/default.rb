@@ -46,7 +46,7 @@ action :load do
       :group => new_resource.group
     )
     action :nothing
-  end.run_action(:create)
+  end.run_action(:create_if_missing)
 
   # load ENV variables from file specified by dotenv atrribute
   ::Dotenv.load! filepath
